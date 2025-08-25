@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melodia Animal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <main>
+        <div id="start-screen">
+            <h1>Melodia Animal</h1>
+            <p>Use sua criatividade para compor uma melodia para cada animal!</p>
+            <div class="button-container">
+                <button id="play-button" class="btn btn-primary">Jogar</button>
+                <button id="instructions-button" class="btn btn-secondary">Instruções</button>
+            </div>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button" class="btn-exit">Sair</button>
+                <h1>Melodia Animal</h1>
+                <div id="level-display">Nível 1</div>
+            </div>
+            <p class="subtitle">Crie uma melodia para o nome do animal!</p>
+
+            <div id="animal-display">
+                <img src="" alt="Animal" id="animal-image">
+            </div>
+            <div id="syllable-slots"></div>
+            <div id="note-palette-container">
+                <p class="palette-title">Arraste as notas para criar sua melodia</p>
+                <div id="note-palette"></div>
+            </div>
+            <div id="controls">
+                <button id="clear-button" class="btn btn-danger">Limpar</button>
+                <button id="play-melody-button" class="btn btn-primary" disabled>Tocar</button>
+                <button id="next-button" class="btn btn-secondary">Próximo</button>
+            </div>
+        </div>
+
+        <div id="instructions-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <h2>Como Jogar?</h2>
+                <p>O objetivo é se divertir criando! Arraste qualquer nota da paleta para as sílabas. Quando todas estiverem preenchidas, clique em "Tocar" para ouvir sua obra de arte!</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Entendi!</button>
+            </div>
+        </div>
+        <div id="level-up-2-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <h2>Parabéns! Nível 2</h2>
+                <p>Novas notas foram adicionadas à sua paleta. Continue compondo!</p>
+                <button class="continue-button btn btn-primary">Continuar</button>
+            </div>
+        </div>
+        <div id="level-up-3-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <h2>Parabéns! Nível 3</h2>
+                <p>Agora você tem todas as notas! Crie melodias incríveis!</p>
+                <button class="continue-button btn btn-primary">Continuar</button>
+            </div>
+        </div>
+        <div id="final-victory-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <img src="images/animais-festa.png" alt="Festa dos Animais" class="final-victory-image">
+                <h2>Parabéns!</h2>
+                <p>Você criou melodias para todos os animais e se tornou um grande compositor!</p>
+                <button id="play-again-button" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="audio-background" src="sounds/background-music.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
