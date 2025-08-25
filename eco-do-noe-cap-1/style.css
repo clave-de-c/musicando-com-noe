@@ -1,0 +1,223 @@
+/* Estilos Gerais */
+:root {
+    --bg-color: #aee8ff;
+    --panel-color: #ffffff;
+    --text-color: #2c3e50;
+    --highlight-color: #ffc107;
+    --primary-color: #4CAF50;
+    --secondary-color: #3498db;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color); 
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Telas e Contêineres */
+#start-screen, #game-container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--panel-color);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e67e22;
+    background-color: #f1f1f1;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Botões */
+.button-container {
+    margin-top: 30px;
+}
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.btn.btn-primary { background-color: var(--primary-color); }
+.btn.btn-secondary { background-color: var(--secondary-color); }
+
+#exit-button {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#exit-button:hover {
+    background: #e0e0e0;
+}
+
+/* Modal de Instruções */
+#instructions-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-box {
+    background-color: white; padding: 40px; border-radius: 20px;
+    text-align: center; max-width: 450px; margin: 20px;
+}
+
+/* Jogo */
+#character-area {
+    margin-bottom: 20px;
+}
+#noe-char {
+    max-width: 150px;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+#noe-char.celebrate {
+    transform: scale(1.1) rotate(10deg);
+}
+#feedback-area {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#feedback-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+#player-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.control-button {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border: 5px solid #bdc3c7;
+    transition: all 0.1s ease;
+    user-select: none;
+    position: relative;
+}
+.control-button span {
+    position: absolute;
+    top: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+.control-button:hover {
+    border-color: #95a5a6;
+}
+.control-button.active {
+    background-color: var(--highlight-color);
+    transform: scale(1.1);
+    border-color: #f39c12;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+    text-align: center;
+}
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Modal de Fim de Jogo e Instruções */
+#instructions-overlay, #game-over-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-box {
+    background-color: white; padding: 40px; border-radius: 20px;
+    text-align: center; max-width: 450px; margin: 20px;
+    animation: pop-in 0.3s ease-out;
+}
+
+#final-score-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+@keyframes pop-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ... (O restante do CSS permanece o mesmo) ... */

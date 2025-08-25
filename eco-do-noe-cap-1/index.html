@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco do Noé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="start-screen">
+            <h1>Eco do Noé</h1>
+            <p>Teste sua memória rítmica repetindo a sequência de sons!</p>
+            <div class="button-container">
+                <button id="play-button" class="btn btn-primary">Jogar</button>
+                <button id="instructions-button" class="btn btn-secondary">Instruções</button>
+            </div>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button">Sair</button>
+                <p id="score">Pontuação: 0</p>
+            </div>
+            <div id="character-area">
+                <img src="noe.gif" alt="Personagem Noé" id="noe-char">
+            </div>
+            <div id="feedback-area">
+                <p id="feedback-text">Preste atenção...</p>
+            </div>
+            <div id="player-controls">
+                <div class="control-button" data-sound="palma" data-key="A"><span>A</span>👏</div>
+                <div class="control-button" data-sound="pe" data-key="S"><span>S</span>🦶</div>
+                <div class="control-button" data-sound="estalo" data-key="D"><span>D</span>🫰</div>
+            </div>
+        </div>
+        
+        <div id="game-over-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Fim de Jogo!</h2>
+                <p id="final-score-text">Sua pontuação final foi: 0</p>
+                <button id="restart-button" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div id="instructions-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Instruções</h2>
+                <p>Observe o Noé e repita a sequência de sons e luzes na ordem correta.<br><br>Você pode clicar nos ícones ou usar as teclas **A, S, D** do seu teclado.</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Entendi!</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="audio-palma" src="sounds/palma.mp3"></audio>
+    <audio id="audio-pe" src="sounds/pe.mp3"></audio>
+    <audio id="audio-estalo" src="sounds/estalo.mp3"></audio>
+    <audio id="audio-background" src="sounds/background-music.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
