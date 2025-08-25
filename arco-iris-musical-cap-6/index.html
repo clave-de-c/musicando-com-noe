@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arco-Íris Musical</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div id="start-screen">
+            <h1>Arco-Íris Musical</h1>
+            <p>Um jogo para aprender as cores e a ordem das notas musicais!</p>
+            <div class="button-container">
+                <button id="play-button" class="btn btn-primary">Jogar</button>
+                <button id="instructions-button" class="btn btn-secondary">Instruções</button>
+            </div>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button">Sair</button>
+                <h1>Arco-Íris Musical</h1>
+                <button id="mute-button">🔊</button>
+            </div>
+            <p>Arraste cada nota para o seu lugar no arco-íris!</p>
+            <div id="rainbow-container">
+                <div class="rainbow-arc" data-note="C" style="--arc-color: #FF0000;"></div>
+                <div class="rainbow-arc" data-note="D" style="--arc-color: #FFA500;"></div>
+                <div class="rainbow-arc" data-note="E" style="--arc-color: #FFFF00;"></div>
+                <div class="rainbow-arc" data-note="F" style="--arc-color: #008000;"></div>
+                <div class="rainbow-arc" data-note="G" style="--arc-color: #00BFFF;"></div>
+                <div class="rainbow-arc" data-note="A" style="--arc-color: #00008B;"></div>
+                <div class="rainbow-arc" data-note="B" style="--arc-color: #8A2BE2;"></div>
+            </div>
+            <div id="notes-container"></div>
+        </div>
+
+        <div id="success-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Parabéns!</h2>
+                <p>Você completou o Arco-Íris Musical!</p>
+                <button id="play-again-button" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+        
+        <div id="instructions-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Instruções</h2>
+                <p>Siga a ordem das cores do arco-íris para montar a escala musical.<br><br>Arraste cada bolha de nota colorida para a faixa correspondente no arco-íris. A ordem correta é: <strong>Dó, Ré, Mi, Fá, Sol, Lá, Si</strong>.</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Fechar</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="background-music" src="background-music.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
