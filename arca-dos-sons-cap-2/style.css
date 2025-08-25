@@ -1,0 +1,113 @@
+/* Estilos Gerais */
+:root {
+    --bg-color: #d1e9f0;
+    --panel-color: #ffffff;
+    --text-color: #3e2723;
+    --tool-bg-color: #ece5d8;
+    --highlight-color: #ffc107;
+    --primary-color: #8bc34a; /* Verde grama */
+    --secondary-color: #607d8b; /* Cinza azulado */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    background-image: url('images/construction-background.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Telas e Contêineres */
+#start-screen, #game-container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--panel-color);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#level-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: #f1f1f1;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Botões */
+.button-container { margin-top: 30px; }
+.btn { padding: 12px 28px; border: none; border-radius: 50px; cursor: pointer; font-size: 1.1rem; font-weight: bold; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: all 0.2s ease-in-out; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+.btn.btn-primary { background-color: var(--primary-color); }
+.btn.btn-secondary { background-color: var(--secondary-color); }
+
+#exit-button { background: #f1f1f1; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; font-weight: bold; color: var(--secondary-color); cursor: pointer; transition: all 0.2s; }
+#exit-button:hover { background: #e0e0e0; }
+
+/* Modais */
+#instructions-overlay, #victory-overlay, #game-over-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-box {
+    background-color: white; padding: 30px; border-radius: 20px;
+    text-align: center; max-width: 450px; margin: 20px;
+    animation: pop-in 0.3s ease-out;
+}
+@keyframes pop-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+#final-score-text { font-size: 1.2rem; margin: 15px 0; }
+
+
+/* Jogo */
+#ark-construction-site { width: 100%; height: 200px; background-color: rgba(139, 195, 74, 0.1); border-radius: 15px; margin-bottom: 20px; position: relative; overflow: hidden; border: 2px dashed rgba(139, 195, 74, 0.5); }
+.ark-piece { position: absolute; max-width: 100%; max-height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.ark-piece.visible { opacity: 1; }
+.ark-complete-image { max-width: 80%; height: auto; margin-bottom: 15px; }
+
+#tools-area { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; }
+.tool { background-color: var(--tool-bg-color); border-radius: 15px; padding: 10px; cursor: pointer; border: 3px solid #c8bca9; transition: all 0.2s ease; width: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.tool:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+.tool.active { border-color: var(--highlight-color); transform: scale(1.1); }
+.tool img { width: 50px; height: 50px; margin-bottom: 10px; object-fit: contain; }
+.tool span { font-weight: bold; font-size: 0.9rem; height: 2.5em; display: flex; align-items: center; }
+#feedback-text { font-weight: bold; min-height: 24px; }
+
+footer { position: fixed; bottom: 0; width: 100%; padding: 10px 0; font-size: 0.9rem; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); text-align: center; }
+footer a { color: #fff; font-weight: bold; }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arca dos Sons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="start-screen">
+            <h1>Arca dos Sons</h1>
+            <p>Ouça os sons das ferramentas e repita a sequência na ordem de altura!</p>
+            <div class="button-container">
+                <button id="play-button" class="btn btn-primary">Jogar</button>
+                <button id="instructions-button" class="btn btn-secondary">Instruções</button>
+            </div>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button">Sair</button>
+                <p id="level-display">Nível: 1</p>
+            </div>
+            <p id="feedback-text">Observe a sequência...</p>
+            
+            <div id="ark-construction-site">
+                <img src="images/ark-part-1.png" class="ark-piece" alt="Parte da arca 1">
+                <img src="images/ark-part-2.png" class="ark-piece" alt="Parte da arca 2">
+                <img src="images/ark-part-3.png" class="ark-piece" alt="Parte da arca 3">
+                <img src="images/ark-part-4.png" class="ark-piece" alt="Parte da arca 4">
+            </div>
+
+            <div id="tools-area">
+                <div class="tool" data-tool="hammer"><img src="images/hammer.png" alt="Martelo"><span>Grave</span></div>
+                <div class="tool" data-tool="sander"><img src="images/sander.png" alt="Lixa"><span>Médio</span></div>
+                <div class="tool" data-tool="saw"><img src="images/saw.png" alt="Serrote"><span>Agudo</span></div>
+            </div>
+        </div>
+        
+        <div id="game-over-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Fim de Jogo!</h2>
+                <p id="final-score-text">Você chegou ao Nível 1</p>
+                <button id="restart-button" class="btn btn-primary">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div id="victory-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Arca Construída!</h2>
+                <img src="images/ark-part-5.png" alt="Arca Completa" class="ark-complete-image">
+                <p>Você conseguiu! Graças à sua ajuda, a arca está pronta!</p>
+                <button id="play-again-button" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <div id="instructions-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Instruções</h2>
+                <p>1. Ouça a sequência de sons das ferramentas (grave, médio e agudo).<br><br>2. Clique nas ferramentas na ordem correta para construir a arca.<br><br>3. Complete 10 níveis para finalizar a construção!</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Entendi!</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="audio-hammer" src="sounds/hammer.mp3"></audio>
+    <audio id="audio-saw" src="sounds/saw.mp3"></audio>
+    <audio id="audio-sander" src="sounds/sander.mp3"></audio>
+    <audio id="audio-background" src="sounds/background-music.mp3" loop></audio>
+    <audio id="audio-correct" src="sounds/correct.mp3"></audio>
+    <audio id="audio-wrong" src="sounds/wrong.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
