@@ -13,6 +13,8 @@ body {
     min-height: 100vh;
     padding: 20px;
     margin: 0;
+    /* Adiciona um preenchimento inferior para garantir espaço para o rodapé */
+    padding-bottom: 80px; 
 }
 
 .container {
@@ -21,15 +23,16 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px;
+    /* Padding vertical reduzido */
+    padding: 30px 40px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 60px; /* Espaço para o rodapé não sobrepor */
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    /* Margem inferior reduzida */
+    margin-bottom: 30px; 
 }
 
 header h1 {
@@ -37,25 +40,26 @@ header h1 {
     font-weight: 700;
     color: #0077be;
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
-    margin-bottom: 0; /* <--- AJUSTE FEITO AQUI */
+    margin-bottom: 0;
 }
 
 header p {
     font-size: 1.2rem;
     color: #555;
-    margin-top: -5px; /* <--- AJUSTE FEITO AQUI */
+    margin-top: -5px;
 }
 
 .game-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    /* Espaçamento entre os cards reduzido */
+    gap: 20px; 
 }
 
 .game-card {
     background: #fff;
     border-radius: 15px;
-    padding: 25px;
+    padding: 20px; /* Padding interno reduzido */
     text-align: center;
     text-decoration: none;
     color: #333;
@@ -82,7 +86,7 @@ header p {
 }
 
 footer {
-    position: fixed;
+    position: fixed; /* Garante que o rodapé esteja sempre visível */
     bottom: 0;
     left: 0;
     width: 100%;
