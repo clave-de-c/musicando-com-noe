@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Voo da Pomba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="start-screen">
+            <h1>O Voo da Pomba</h1>
+            <p>Escolha um modo de jogo para começar!</p>
+            <div class="button-container">
+                <button id="training-mode-button" class="btn btn-primary">Modo Treino</button>
+                <button id="challenge-mode-button" class="btn btn-secondary">Modo Desafio</button>
+            </div>
+            <button id="instructions-button" class="btn btn-instructions">Como Jogar?</button>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button">Sair</button>
+                <h2 id="game-mode-title">Modo Treino</h2>
+                <div id="progress-counter" class="hidden">0 / 10</div>
+            </div>
+            
+            <div id="sky">
+                <img src="dove.png" alt="Pomba" id="dove">
+                <div class="cloud-container" id="low-cloud-container"><img src="cloud.png" alt="Nuvem" class="cloud" data-pitch="low"></div>
+                <div class="cloud-container" id="mid-cloud-container"><img src="cloud.png" alt="Nuvem" class="cloud" data-pitch="mid"></div>
+                <div class="cloud-container" id="high-cloud-container"><img src="cloud.png" alt="Nuvem" class="cloud" data-pitch="high"></div>
+            </div>
+
+            <div id="controls">
+                <button id="play-notes-button" class="btn">Ouvir as Notas</button>
+                <p id="feedback-text">Clique no botão para começar</p>
+            </div>
+        </div>
+
+        <div id="challenge-complete-overlay" class="hidden">
+            <div class="modal-box">
+                <img src="pomba-vitoria.png" alt="Pomba com ramo de oliveira" class="victory-dove">
+                <h2>Desafio Concluído!</h2>
+                <p>Você é um mestre da percepção musical! A pomba encontrou o galho de oliveira graças a você. Parabéns!</p>
+                <button id="back-to-menu-button" class="btn btn-primary">Voltar ao Início</button>
+            </div>
+        </div>
+        
+        <div id="instructions-overlay" class="hidden">
+            <div class="modal-box">
+                <h2>Instruções</h2>
+                <p>1. Clique em "Ouvir as Notas" para escutar uma sequência de 3 sons.<br><br>2. Preste atenção se as notas são graves, médias ou agudas.<br><br>3. Clique nas nuvens na ordem de altura correta para guiar a pomba!</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Entendi!</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="audio-background" src="background-music.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
