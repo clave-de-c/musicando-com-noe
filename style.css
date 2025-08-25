@@ -37,6 +37,7 @@ header h1 {
     font-weight: 700;
     color: #0077be;
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px; /* <--- AJUSTE FEITO AQUI */
 }
 
 header p {
@@ -79,7 +80,6 @@ header p {
     line-height: 1.5;
 }
 
-/* ESTILO DO RODAPÉ ATUALIZADO */
 footer {
     position: fixed;
     bottom: 0;
