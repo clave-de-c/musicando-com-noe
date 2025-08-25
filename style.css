@@ -37,12 +37,13 @@ header h1 {
     font-weight: 700;
     color: #0077be;
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
-    margin-bottom: 5px; /* <--- AJUSTE FEITO AQUI */
+    margin-bottom: 0; /* <--- AJUSTE FEITO AQUI */
 }
 
 header p {
     font-size: 1.2rem;
     color: #555;
+    margin-top: -5px; /* <--- AJUSTE FEITO AQUI */
 }
 
 .game-list {
