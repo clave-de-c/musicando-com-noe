@@ -1,0 +1,97 @@
+/* Estilos Gerais */
+:root {
+    --panel-color: rgba(255, 255, 255, 0.9);
+    --text-color: #1a237e;
+    --primary-color: #00bcd4;
+    --secondary-color: #3f51b5;
+    --hit-zone-color: #ffeb3b;
+    --water-color: #42a5f5;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-image: url('images/rain-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    overflow: hidden;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.hidden { display: none !important; }
+
+/* Telas e Contêineres */
+#start-screen, #game-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--panel-color);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+#score-display, #level-display { font-size: 1rem; font-weight: bold; color: white; background-color: var(--secondary-color); padding: 5px 10px; border-radius: 20px; }
+#exit-button { background: #e8eaf6; border: 1px solid #c5cae9; border-radius: 20px; padding: 5px 15px; font-weight: bold; color: var(--secondary-color); cursor: pointer; transition: all 0.2s; }
+#exit-button:hover { background: #c5cae9; }
+
+/* Botões */
+.button-container { margin-top: 30px; }
+.btn { padding: 12px 28px; border: none; border-radius: 50px; cursor: pointer; font-size: 1.1rem; font-weight: bold; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: all 0.2s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+.btn.btn-primary { background-color: var(--primary-color); }
+.btn.btn-secondary { background-color: var(--secondary-color); }
+
+.button-container-vertical {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.button-container-vertical .btn {
+    width: 80%;
+}
+
+/* Modal */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.modal-box { background-color: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 450px; margin: 20px; animation: pop-in 0.3s ease; }
+@keyframes pop-in { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Área do Jogo */
+#feedback-text { font-weight: bold; min-height: 24px; color: var(--text-color); }
+#game-area { width: 100%; height: 500px; background: rgba(0,0,0,0.2); border-radius: 15px; position: relative; overflow: hidden; cursor: pointer; margin-top: 10px; }
+#hit-zone { position: absolute; bottom: 15%; left: 0; width: 100%; height: 10px; background-color: var(--hit-zone-color); box-shadow: 0 0 20px var(--hit-zone-color); z-index: 10; }
+#water-level { position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background-color: var(--water-color); opacity: 0.6; transition: height 0.5s ease-out; z-index: 1; }
+.raindrop { position: absolute; top: -50px; width: 40px; height: 40px; background-image: url('images/raindrop.png'); background-size: contain; background-repeat: no-repeat; animation: fall linear; z-index: 20; }
+@keyframes fall { to { transform: translateY(550px); } }
+
+/* Efeito de Partículas */
+.particle {
+    position: absolute;
+    background-color: var(--hit-zone-color);
+    border-radius: 50%;
+    opacity: 1;
+    animation: explode 0.7s ease-out forwards;
+    z-index: 15;
+}
+@keyframes explode {
+    from { opacity: 1; transform: translate(0, 0) scale(1); }
+    to { opacity: 0; transform: translate(var(--x), var(--y)) scale(0); }
+}
+
+footer { position: fixed; bottom: 0; width: 100%; padding: 10px 0; font-size: 0.9rem; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); text-align: center; }
+footer a { color: #fff; font-weight: bold; }

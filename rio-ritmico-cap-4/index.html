@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotinhas Rítmicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="start-screen">
+            <h1>Gotinhas Rítmicas</h1>
+            <p>Mantenha o Ritmo da Chuva para a arca flutuar!</p>
+            <div class="button-container">
+                <button id="play-button" class="btn btn-primary">Jogar</button>
+                <button id="instructions-button" class="btn btn-secondary">Instruções</button>
+            </div>
+        </div>
+
+        <div id="game-container" class="hidden">
+            <div class="game-header">
+                <button id="exit-button">Sair</button>
+                <div id="level-display">Nível 1</div>
+                <div id="score-display">Pontos: 0 / 300</div>
+            </div>
+            <p id="feedback-text"></p>
+            <div id="game-area">
+                <div id="water-level"></div>
+                <div id="hit-zone"></div>
+            </div>
+        </div>
+
+        <div id="victory-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <h2>Missão Cumprida!</h2>
+                <p>Você manteve o ritmo perfeitamente. Parabéns!</p>
+                <div class="button-container-vertical">
+                    <button id="play-again-button" class="btn btn-primary">Jogar Novamente</button>
+                    <button id="back-to-menu-button" class="btn btn-secondary">Ir ao Início</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="instructions-overlay" class="hidden modal-overlay">
+            <div class="modal-box">
+                <h2>Como Jogar?</h2>
+                <p>Gotas de chuva cairão em padrões rítmicos. Pressione a **Barra de Espaço** ou **clique na tela** no momento em que uma gota cruzar a linha. Alcance 300 pontos para vencer!</p>
+                <button id="close-instructions-button" class="btn btn-secondary">Entendi!</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Desenvolvido por <strong>Clave de C</strong> | <a href="https://clavedec.com.br" target="_blank">clavedec.com.br</a> | <a href="https://www.instagram.com/clavedec.oficial" target="_blank">@clavedec.oficial</a></p>
+    </footer>
+
+    <audio id="audio-background" src="sounds/background-music.mp3" loop></audio>
+    <audio id="audio-hit" src="sounds/hit.mp3"></audio>
+    <audio id="audio-correct" src="sounds/correct.mp3"></audio>
+    <audio id="audio-wrong" src="sounds/wrong.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
